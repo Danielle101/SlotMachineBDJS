@@ -43,18 +43,23 @@ public class slots {
 		case 1:
 			winnings = player.getBet() * 2;
 			player.setBank((player.getBank() + winnings));
+			break;
 		case 2:
 			winnings = player.getBet() * 3;
 			player.setBank((player.getBank() + winnings));
+			break;
 		case 3:
 			winnings = player.getBet() * 4;
 			player.setBank((player.getBank() + winnings));
+			break;
 		case 4:
 			winnings = player.getBet() * 5;
 			player.setBank((player.getBank() + winnings));
+			break;
 		case 5:
 			winnings = player.getBet() * 10;
 			player.setBank((player.getBank() + winnings));
+			break;
 		}
 	}
 
