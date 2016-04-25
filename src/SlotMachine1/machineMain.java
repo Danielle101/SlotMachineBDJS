@@ -17,8 +17,9 @@ static Scanner sc = new Scanner(System.in);
 		String keepPlaying = "y";
 		while(keepPlaying.equalsIgnoreCase("y")){
 		System.out.print("How much would you like to bet?:");
-		int input = sc.nextInt();
-		sc.nextLine();
+		// Validation for player input...between 1 and money left in bank
+		int input = validator.getValidInt(1, player.getBank());
+		
 		player.setBet(input);
 		//subtract bet from bank
 		player.setBank(player.getBank()-player.getBet());
@@ -26,7 +27,7 @@ static Scanner sc = new Scanner(System.in);
 		slots.checkWin();
 		
 		System.out.print("Would you like to try your luck again (y/n): ");
-		keepPlaying = sc.nextLine();
+		keepPlaying = validator.readYorN("y", "n");
 		}//end while to keep going
 		System.out.println("Thanks for playing.");
 		System.out.println("Please cash out at the front desk.");
