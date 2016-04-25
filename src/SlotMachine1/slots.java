@@ -16,14 +16,21 @@ public class slots {
 		wheel1= randomGen ();
 		wheel2= randomGen ();
 		wheel3= randomGen ();
+		//printBoard
+		printBoard();
 		//check for win and send to pay
 		if (wheel1 == wheel2 && wheel2 == wheel3){
 			gameWin= wheel1;
+			payOut();
+			System.out.println("You're a Winner!!!!" + "/n");
+		}else {
+			System.out.println("You lose!" + "/n");
 		}
+		
+		System.out.println("Your bank: $" + player.getBank());
 	}
 	
 	public static void payOut (){
-		checkWin();
 		switch (gameWin){
 		case 1: //player bank +=10;
 				player.setBank((player.getBank()+(player.getBet()+10)));
@@ -36,5 +43,9 @@ public class slots {
 		case 5: //player bank +=50;
 				player.setBank((player.getBank()+(player.getBet()+50)));
 		}
+	}
+	
+	public static void printBoard(){
+		System.out.println(wheel1 + " | " + wheel2 + " | " + wheel3);
 	}
 }

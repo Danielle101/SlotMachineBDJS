@@ -10,13 +10,23 @@ public class machineMain {
 static Scanner sc = new Scanner(System.in);
 	public static void main(String[] args) {
 		File slot = new File("slot.wav");
-		// PlaySound(slot);
 		
 		System.out.println("Welcome to the BDJS SLOT MACHINE!");
 		System.out.println("You have 1000 credits!");
+		
+		String keepPlaying = "y";
+		while(keepPlaying.equalsIgnoreCase("y")){
 		System.out.println("How much would you like to bet?:");
 		int input = sc.nextInt();
-	 player.setBet(input);
+		sc.nextLine();
+		player.setBet(input);
+		
+		PlaySound(slot);
+		slots.checkWin();
+		
+		System.out.print("Would you like to try your luck again (y/n): ");
+		keepPlaying = sc.nextLine();
+		}//end while to keep going
 	}
 
 //	PlaySound method plays clip from file (taken from input)
