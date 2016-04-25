@@ -3,28 +3,31 @@ package SlotMachine1;
 import java.util.Random;
 
 public class slots {
+	// Initialize variables for wheels, win check and payouts
 	private static int wheel1;
 	private static int wheel2;
 	private static int wheel3;
 	private static int gameWin;
 	private static int winnings;
 
+	// Method for RNG for slot machine wheels
 	public static int randomGen() {
 		Random r = new Random();
 		int random = r.nextInt(5) + 1;
 		return random;
 	}
 
+	// Method to check for wins, each wheel makes a call to RNG method
 	public static void checkWin() {
 		wheel1 = randomGen();
 		wheel2 = randomGen();
 		wheel3 = randomGen();
 		
-		// printBoard
+		// Prints the slot machine to console
 		sound.PlaySound(sound.getSlot());
 		printBoard();
 		
-		// check for win and send to pay
+		// check for win and send to payout
 		if (wheel1 == wheel2 && wheel2 == wheel3) {
 			gameWin = wheel1;
 			payOut();
@@ -38,6 +41,7 @@ public class slots {
 		System.out.println("Your bank: $" + player.getBank());
 	}
 
+	// Switch to show payouts and math for wins
 	public static void payOut() {
 		switch (gameWin) {
 		case 1:
@@ -63,6 +67,7 @@ public class slots {
 		}
 	}
 
+	// Method to print slot machine
 	public static void printBoard() {
 		System.out.println(wheel1 + " | " + wheel2 + " | " + wheel3);
 	}

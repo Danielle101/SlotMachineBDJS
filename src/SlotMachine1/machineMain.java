@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class machineMain {
 
+	// Initialize Scanner for user input 
 	static Scanner sc = new Scanner(System.in);
 
 	public static void main(String[] args) {
@@ -37,6 +38,8 @@ public class machineMain {
 	/**
 	 * 
 	 */
+	
+	// Method to print greetings and rules
 	public static void printGreeting() {
 		System.out.println("Welcome to the BDJS SLOT MACHINE!\n");
 		System.out.println("Rules of the Game:");
