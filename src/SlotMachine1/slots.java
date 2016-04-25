@@ -21,6 +21,7 @@ public class slots {
 		wheel3 = randomGen();
 		
 		// printBoard
+		sound.PlaySound(sound.getSlot());
 		printBoard();
 		
 		// check for win and send to pay
@@ -32,7 +33,7 @@ public class slots {
 			sound.PlaySound(sound.getWin());
 		} else {
 			System.out.println("You lose!" + "\n");
-			sound.PlaySound(sound.getSlot());
+			sound.PlaySound(sound.getLoser());
 		}
 		System.out.println("Your bank: $" + player.getBank());
 	}
