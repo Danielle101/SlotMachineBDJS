@@ -29,8 +29,10 @@ public class slots {
 			payOut();
 			System.out.println("You're a Winner!!!!");
 			System.out.println("You won + " + winnings);
+			sound.PlaySound(sound.getWin());
 		} else {
 			System.out.println("You lose!" + "\n");
+			sound.PlaySound(sound.getSlot());
 		}
 		System.out.println("Your bank: $" + player.getBank());
 	}
