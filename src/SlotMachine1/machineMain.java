@@ -16,17 +16,20 @@ static Scanner sc = new Scanner(System.in);
 		
 		String keepPlaying = "y";
 		while(keepPlaying.equalsIgnoreCase("y")){
-		System.out.println("How much would you like to bet?:");
+		System.out.print("How much would you like to bet?:");
 		int input = sc.nextInt();
 		sc.nextLine();
 		player.setBet(input);
-		
+		//subtract bet from bank
+		player.setBank(player.getBank()-player.getBet());
 		PlaySound(slot);
 		slots.checkWin();
 		
 		System.out.print("Would you like to try your luck again (y/n): ");
 		keepPlaying = sc.nextLine();
 		}//end while to keep going
+		System.out.println("Thanks for playing.");
+		System.out.println("Please cash out at the front desk.");
 	}
 
 //	PlaySound method plays clip from file (taken from input)
