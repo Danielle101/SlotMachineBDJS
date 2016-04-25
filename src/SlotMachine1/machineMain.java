@@ -8,7 +8,16 @@ public class machineMain {
 
 	public static void main(String[] args) {
 
-		System.out.println("Welcome to the BDJS SLOT MACHINE!");
+		System.out.println("Welcome to the BDJS SLOT MACHINE!\n");
+		System.out.println("Rules of the Game:");
+		System.out.println(
+				"1. You may not bid more than the amount that you have in your bank.\n" + "2. You may not bid zero.\n"
+						+ "3. If all three numbers on all three wheels match then you are a winner!\n");
+
+		System.out.println("Winner Payout Chart:\nTriple 1s : You win your bet amount x 2\n"
+				+ "Triple 2s : You win your bet amount x 3\nTriple 3s : You win your bet amount x 4\n"
+				+ "Triple 4s : You win your bet amount x 5\nTriple 5s : You win your bet amount x 10\n");
+
 		System.out.println("You have 1000 credits!");
 
 		String keepPlaying = "y";
